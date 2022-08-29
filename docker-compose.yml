@@ -7,7 +7,7 @@ services:
     depends_on:
       - db
     environment:
-      TOKEN: 5396506230:AAFG8sQmJnf2ccbqv6pnTw4DddCy_CGEQDg
+      TOKEN: "свой токен"
       HOST: db
       PORT: 5432
       USER: postgres

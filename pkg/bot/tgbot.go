@@ -8,10 +8,6 @@ import (
 )
 
 func TelegramBot() {
-	if err := database.InitLastPost(); err != nil {
-		panic(err)
-	}
-
 	bot, err := tgbotapi.NewBotAPI(os.Getenv("TOKEN"))
 	if err != nil {
 		panic(err)

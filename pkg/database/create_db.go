@@ -27,7 +27,12 @@ func CreateTable() error {
 	defer db.Close()
 
 	if _, err = db.Query("CREATE TABLE last_post(POST varchar(255));"); err != nil && fmt.Sprintf("%s", err.Error()) != `pq: relation "last_post" already exists` {
-		fmt.Println(err.Error())
+		log.Fatalf(err.Error())
+		return err
+	}
+
+	if err := InitLastPost(); err != nil {
+		log.Fatalf(err.Error())
 		return err
 	}
 
